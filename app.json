@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Campus Circle",
+    "slug": "campus-circle",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F7F7FB"
+    },
+    "android": {
+      "package": "com.campuscircle.app"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
