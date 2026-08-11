@@ -4,14 +4,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { ChatListItem } from '../components/ChatListItem';
 import { EmptyState } from '../components/EmptyState';
-import { conversations } from '../data/chat';
 import { getPerson } from '../data/events';
+import { useChat } from '../context/ChatContext';
 import { colors, radius, spacing } from '../theme';
 
 export function ChatScreen({ navigation }: any) {
+  const { conversations, markAsRead } = useChat();
   const [activeTab, setActiveTab] = useState('all');
   const [q, setQ] = useState('');
-  const [readConversations, setReadConversations] = useState<Set<string>>(new Set());
 
   return (
     <SafeAreaView style={s.safe} edges={['top']}>
@@ -55,30 +55,40 @@ export function ChatScreen({ navigation }: any) {
         {/* Chat List */}
         {conversations.length > 0 ? (
           <View style={s.list}>
-            {conversations.map((conv, i) => {
+            {conversations
+              .filter(c => {
+                if (activeTab === 'unread') return c.unreadCount > 0;
+                if (activeTab === 'groups') return c.isGroup;
+                if (activeTab === 'requests') return false; // mock empty requests
+                return true;
+              })
+              .filter(c => {
+                if (!q) return true;
+                const person = getPerson(c.participantId);
+                const nameMatch = person?.name.toLowerCase().includes(q.toLowerCase());
+                const msgMatch = c.lastMessage.toLowerCase().includes(q.toLowerCase());
+                return nameMatch || msgMatch;
+              })
+              .map((conv, i) => {
               const person = getPerson(conv.participantId);
-              if (!person) return null;
+              if (!person && !conv.isGroup) return null;
               
-              // Handle group mock for "ML Club Group" or others
-              const isGroup = person.name.includes('Group');
-              let displayMsg = conv.lastMessage;
-              if (isGroup && displayMsg === "Let's meet up today!") {
-                displayMsg = "Neha: New announcement uploaded";
-              }
-
-              const displayUnread = readConversations.has(conv.id) ? 0 : conv.unreadCount;
+              // Handle group mock
+              const avatarId = conv.isGroup ? 'mlsc' : person?.avatar;
+              const name = conv.isGroup ? 'MLSC Group' : person?.name ?? 'Unknown';
 
               return (
                 <View key={conv.id} style={s.listItemWrap}>
                   <ChatListItem
-                    avatarId={person.avatar}
-                    name={person.name}
-                    lastMessage={displayMsg}
+                    avatarId={avatarId}
+                    name={name}
+                    lastMessage={conv.lastMessage}
                     time={conv.time}
-                    unreadCount={displayUnread}
-                    online={i < 2}
+                    unreadCount={conv.unreadCount}
+                    online={i < 2 && !conv.isGroup}
+                    typing={conv.typing}
                     onPress={() => {
-                      setReadConversations(prev => new Set(prev).add(conv.id));
+                      markAsRead(conv.id);
                       navigation.navigate('ChatConversation', { conversationId: conv.id, participantId: conv.participantId });
                     }}
                   />

@@ -10,6 +10,7 @@ type Props = {
   time: string;
   unreadCount?: number;
   online?: boolean;
+  typing?: boolean;
   onPress: () => void;
 };
 
@@ -20,6 +21,7 @@ export function ChatListItem({
   time,
   unreadCount = 0,
   online = false,
+  typing = false,
   onPress,
 }: Props) {
   return (
@@ -40,21 +42,27 @@ export function ChatListItem({
           <Text style={[s.time, unreadCount > 0 && s.timeUnread]}>{time}</Text>
         </View>
         <View style={s.bottomRow}>
-          <Text
-            style={[s.message, unreadCount > 0 && s.messageUnread]}
-            numberOfLines={1}
-          >
-            {lastMessage.includes(': ') ? (
-              <>
-                <Text style={{ color: colors.primary, fontWeight: '600' }}>
-                  {lastMessage.split(': ')[0]}: 
-                </Text>
-                {lastMessage.split(': ')[1]}
-              </>
-            ) : (
-              lastMessage
-            )}
-          </Text>
+          {typing ? (
+            <Text style={[s.message, { color: colors.primary, fontWeight: '500' }]} numberOfLines={1}>
+              Typing...
+            </Text>
+          ) : (
+            <Text
+              style={[s.message, unreadCount > 0 && s.messageUnread]}
+              numberOfLines={1}
+            >
+              {lastMessage.includes(': ') ? (
+                <>
+                  <Text style={{ color: colors.primary, fontWeight: '600' }}>
+                    {lastMessage.split(': ')[0]}: 
+                  </Text>
+                  {lastMessage.split(': ')[1]}
+                </>
+              ) : (
+                lastMessage
+              )}
+            </Text>
+          )}
           {unreadCount > 0 && (
             <View style={s.badge}>
               <Text style={s.badgeText}>{unreadCount > 9 ? '9+' : unreadCount}</Text>

@@ -86,6 +86,8 @@ export type ChatConversation = {
   lastMessage: string;
   time: string;
   unreadCount: number;
+  isGroup?: boolean;
+  typing?: boolean;
 };
 
 export type ChatMessage = {
@@ -94,6 +96,8 @@ export type ChatMessage = {
   senderId: string;
   text: string;
   time: string;
+  read?: boolean;
+  imageUrl?: string;
 };
 
 export type ActivityFeedItem = {

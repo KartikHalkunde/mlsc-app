@@ -24,7 +24,7 @@ export function OnboardingScreen() {
   };
 
   return (
-    <KeyboardAvoidingView style={s.safe} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <KeyboardAvoidingView style={s.safe} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
         <View style={s.brand}>
           <View style={s.logo}><Ionicons name="school" size={28} color="#fff" /></View>
