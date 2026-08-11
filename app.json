@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "Campus Circle",
-    "slug": "campus-circle",
+    "slug": "kartikhalkunde",
     "version": "1.0.0",
+    "icon": "./assets/icon.png",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
@@ -13,6 +14,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "88872d47-ac59-4438-bd7e-801be1c7acc4"
+      }
+    },
+    "owner": "kartikhalkunde-app"
   }
 }
