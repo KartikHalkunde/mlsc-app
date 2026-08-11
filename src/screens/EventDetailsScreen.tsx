@@ -132,7 +132,6 @@ export function EventDetailsScreen({ route, navigation }: any) {
           <Button 
             title="Unregister" 
             onPress={() => unenrollEvent(e.id)} 
-            style={s.registerBtn}
             variant="tonal"
             icon="close"
             iconPosition="right"
@@ -141,7 +140,6 @@ export function EventDetailsScreen({ route, navigation }: any) {
           <Button 
             title="Register Now" 
             onPress={() => navigation.navigate('Enroll', { id: e.id })} 
-            style={s.registerBtn}
             icon="arrow-forward"
             iconPosition="right"
           />
@@ -414,13 +412,12 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
+    flexShrink: 1,
   },
   bottomText: {
     fontSize: 12,
     color: colors.onSurfaceVariant,
     lineHeight: 16,
-  },
-  registerBtn: {
-    paddingHorizontal: 24,
+    flexShrink: 1,
   },
 });
