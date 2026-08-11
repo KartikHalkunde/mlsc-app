@@ -32,17 +32,15 @@ export function ChatConversationScreen({ route, navigation }: any) {
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         {/* Header */}
         <View style={[s.header, elevation.level1]}>
-          <Pressable onPress={() => navigation.goBack()} style={s.backBtn}>
+          <Pressable onPress={() => navigation.goBack()} style={[s.backBtn, { zIndex: 10 }]}>
             <Ionicons name="arrow-back" size={22} color={colors.onSurface} />
           </Pressable>
-          <Avatar avatarId={avatarId} name={name} size={36} />
-          <View style={{ flex: 1 }}>
-            <Text style={s.headerName}>{name}</Text>
-            <Text style={s.headerStatus}>{status}</Text>
-          </View>
-          <View style={s.headerActions}>
-            <Pressable style={s.actionBtn}><Ionicons name="videocam-outline" size={22} color={colors.primary} /></Pressable>
-            <Pressable style={s.actionBtn}><Ionicons name="call-outline" size={20} color={colors.primary} /></Pressable>
+          <View style={s.headerCenterWrap}>
+            <Avatar avatarId={avatarId} name={name} size={36} />
+            <View style={s.headerTextWrap}>
+              <Text style={s.headerName}>{name}</Text>
+              <Text style={s.headerStatus}>{status}</Text>
+            </View>
           </View>
         </View>
 
@@ -89,9 +87,6 @@ export function ChatConversationScreen({ route, navigation }: any) {
 
         {/* Input */}
         <View style={[s.inputBar, elevation.level2]}>
-          <Pressable style={s.attachBtn}>
-            <Ionicons name="add" size={24} color={colors.onSurfaceVariant} />
-          </Pressable>
           <View style={s.textInputWrap}>
             <TextInput
               value={input}
@@ -101,19 +96,10 @@ export function ChatConversationScreen({ route, navigation }: any) {
               style={s.textInput}
               multiline
             />
-            {!input.trim() && (
-              <Ionicons name="camera-outline" size={20} color={colors.onSurfaceVariant} style={s.inputIconRight} />
-            )}
           </View>
-          {input.trim().length > 0 ? (
-            <Pressable onPress={handleSend} style={[s.sendBtn, s.sendBtnActive]}>
-              <Ionicons name="send" size={18} color={colors.onPrimary} style={{ marginLeft: 2 }} />
-            </Pressable>
-          ) : (
-            <Pressable style={s.micBtn}>
-              <Ionicons name="mic" size={22} color={colors.onSurfaceVariant} />
-            </Pressable>
-          )}
+          <Pressable onPress={handleSend} style={[s.sendBtn, input.trim().length > 0 ? s.sendBtnActive : s.sendBtnInactive]}>
+            <Ionicons name="send" size={18} color={input.trim().length > 0 ? colors.onPrimary : colors.onSurfaceVariant} style={{ marginLeft: 2 }} />
+          </Pressable>
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -122,8 +108,10 @@ export function ChatConversationScreen({ route, navigation }: any) {
 
 const s = StyleSheet.create({
   safe: { flex: 1, backgroundColor: colors.background },
-  header: { flexDirection: 'row', alignItems: 'center', gap: 12, paddingHorizontal: 16, paddingVertical: 12, backgroundColor: colors.surface },
+  header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 12, backgroundColor: colors.surface },
   backBtn: { height: 40, width: 40, alignItems: 'center', justifyContent: 'center', marginLeft: -8 },
+  headerCenterWrap: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, pointerEvents: 'none' },
+  headerTextWrap: { justifyContent: 'center' },
   headerName: { fontSize: 16, fontWeight: '600', color: colors.onSurface },
   headerStatus: { fontSize: 12, color: colors.onSurfaceVariant, marginTop: 1 },
   headerActions: { flexDirection: 'row', gap: 4 },
@@ -143,12 +131,10 @@ const s = StyleSheet.create({
   bubbleTime: { fontSize: 10, fontWeight: '500' },
   bubbleTimeSelf: { color: colors.onPrimary + 'B3' },
   bubbleTimeOther: { color: colors.onSurfaceVariant },
-  inputBar: { flexDirection: 'row', alignItems: 'flex-end', paddingHorizontal: 8, paddingVertical: 8, paddingBottom: 16, backgroundColor: colors.surface },
-  attachBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
-  textInputWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: colors.surfaceContainerHigh, borderRadius: 22, minHeight: 44, paddingRight: 12 },
+  inputBar: { flexDirection: 'row', alignItems: 'flex-end', paddingHorizontal: 12, paddingVertical: 10, paddingBottom: 16, backgroundColor: colors.surface, gap: 10 },
+  textInputWrap: { flex: 1, flexDirection: 'row', alignItems: 'center', backgroundColor: colors.surfaceContainerHigh, borderRadius: 22, minHeight: 44 },
   textInput: { flex: 1, paddingHorizontal: 16, paddingTop: 12, paddingBottom: 12, fontSize: 15, color: colors.onSurface, maxHeight: 100 },
-  inputIconRight: { marginLeft: 8 },
-  sendBtn: { height: 44, width: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginLeft: 8 },
+  sendBtn: { height: 44, width: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   sendBtnActive: { backgroundColor: colors.primary },
-  micBtn: { height: 44, width: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', marginLeft: 4 },
+  sendBtnInactive: { backgroundColor: colors.surfaceContainerHigh },
 });
