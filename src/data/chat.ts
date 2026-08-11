@@ -2,14 +2,6 @@ import { ChatConversation, ChatMessage } from '../types';
 
 export const conversations: ChatConversation[] = [
   {
-    id: 'c1',
-    participantId: 'aditi',
-    lastMessage: 'Hey! Are you coming to HackVerse? 🚀',
-    time: '2 min ago',
-    unreadCount: 2,
-    typing: true,
-  },
-  {
     id: 'c2',
     participantId: 'rohan',
     lastMessage: 'Bro the hackathon prep is going great',
@@ -55,14 +47,6 @@ export const conversations: ChatConversation[] = [
 ];
 
 export const messages: ChatMessage[] = [
-  // Conversation with Aditi
-  { id: 'm1', conversationId: 'c1', senderId: 'self', text: 'Hey Aditi! What\'s up?', time: '10:30 AM', read: true },
-  { id: 'm2', conversationId: 'c1', senderId: 'aditi', text: 'Hey! Working on the MLSC website rn', time: '10:32 AM', read: true },
-  { id: 'm3', conversationId: 'c1', senderId: 'self', text: 'Nice! Need any help?', time: '10:33 AM', read: true },
-  { id: 'm4', conversationId: 'c1', senderId: 'aditi', text: 'Actually yes! Can you review the event page?', time: '10:35 AM', read: true },
-  { id: 'm5', conversationId: 'c1', senderId: 'self', text: 'Sure, send me the link', time: '10:36 AM', read: true },
-  { id: 'm6', conversationId: 'c1', senderId: 'aditi', text: 'Hey! Are you coming to HackVerse? 🚀', time: '11:00 AM', read: false },
-
   // Conversation with Rohan
   { id: 'm7', conversationId: 'c2', senderId: 'rohan', text: 'Yo! Team for HackVerse?', time: '9:00 AM', read: true },
   { id: 'm8', conversationId: 'c2', senderId: 'self', text: 'I\'m in! Who else?', time: '9:05 AM', read: true },
