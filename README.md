@@ -93,24 +93,6 @@ Campus Circle is a cross-platform mobile application that helps you stay connect
 
 </div>
 <div align="center">
-
----
-<div align="center">
-<h1>Support Development</h1>
-
-<h3>If Campus Circle helps you stay connected, consider supporting!</h3>
-</br>
-
-**For Global Users:**
-
-<a href="https://buymeacoffee.com/kartikhalkunde">
-  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDC10?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" height="55" />
-</a>
-&nbsp;&nbsp;
-<a href="https://github.com/sponsors/KartikHalkunde">
-  <img src="https://img.shields.io/badge/GitHub_Sponsors-EA4AAA?style=for-the-badge&logo=github&logoColor=white" alt="Sponsor on GitHub" height="55" />
-</a>
-
 <br/><br/>
 
 ---
