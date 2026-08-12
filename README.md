@@ -1,20 +1,118 @@
-# Campus Circle
+<div align="center">
+<img src="assets/icon.png" width="160" height="160" style="display: block; margin: 0 auto; border-radius: 32px;"/>
+<h1>Campus Circle</h1>
+<p>
+  <h3> Modern College Community & Event Platform </h3>
+</p>
 
-A polished Expo React Native app for discovering college club events and registering from a mobile-first interface.
+<div style="padding: 16px; margin: 16px 0; background-color: #F0F4FF; border-left: 6px solid #4285F4; border-radius: 4px; text-align: left;">
+<h2 style="margin: 0;"><strong>About</strong></h2>
+Campus Circle is a cross-platform mobile application that helps you stay connected with your college community. Discover events, join clubs, network with peers, and chat with friends—all in one beautiful, Material Design 3 inspired app.
+</div>
 
-## Run it
+<br></br>
+<div align="center">
 
-```bash
-npm install
-npm start
-```
+![Expo](https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Scan the Expo QR code with Expo Go, or run `npm run android` / `npm run ios`.
+</br>
+</div> 
 
-## Included flows
+---
 
-- Home dashboard with upcoming-event carousel and club overview
-- Searchable, category-filtered event feed with loading, refresh and empty states
-- Event detail view with organiser, venue and attendance information
-- Registration form with required-field validation and confirmation pass
-- Contact information, social links and contact-form confirmation
+<h1>Screenshots</h1>
+
+<img src="assets/screenshots/1.jpg" width="45%" />
+<img src="assets/screenshots/2.jpg" width="45%" />
+<img src="assets/screenshots/3.jpg" width="45%" />
+<img src="assets/screenshots/4.jpg" width="45%" />
+<img src="assets/screenshots/5.jpg" width="45%" />
+<img src="assets/screenshots/6.jpg" width="45%" />
+
+---
+
+<div align="center">
+<h1>Download Now</h1>
+
+<table>
+<tr>
+<td align="center">
+<a href="https://expo.dev/accounts/kartikhalkunde-app/projects/kartikhalkunde/builds/67134aab-0ccb-4f66-a525-208a92c2cbef"><img src="https://img.shields.io/badge/Download_APK_from_Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white" alt="Download from Expo" height="50"></a>
+</td>
+<td align="center">
+<a href="https://github.com/KartikHalkunde/mlsc-app/releases"><img src="https://img.shields.io/badge/Download_Latest_APK-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Download Latest Release" height="50"></a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+
+---
+<div align="center">
+
+# Table of Contents
+
+<table>
+<tr>
+<td align="left">
+
+- [Features](#features)
+- [Building from Source](#building-from-source)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Report Issues](https://github.com/KartikHalkunde/mlsc-app/issues)
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+# Features
+
+<table>
+<tr>
+<td align="left">
+
+- **Interactive Feed:** Stay updated with upcoming campus events and friends' activity.
+- **Event Management:** Rich event details, one-click registration, and attendee lists.
+- **Networking:** Discover campus clubs, explore roles, and connect with other students.
+- **Real-time Chat:** Seamless messaging interface with read receipts, typing indicators, and media support.
+- **Personalized Profiles:** Custom avatars, banners, and digital club badges.
+- **Material Design 3:** Beautiful, tonal UI with smooth micro-animations.
+
+</td>
+</tr>
+</table>
+
+</div>
+<div align="center">
+
+---
+<div align="center">
+<h1>Support Development</h1>
+
+<h3>If Campus Circle helps you stay connected, consider supporting!</h3>
+</br>
+
+**For Global Users:**
+
+<a href="https://buymeacoffee.com/kartikhalkunde">
+  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDC10?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" height="55" />
+</a>
+&nbsp;&nbsp;
+<a href="https://github.com/sponsors/KartikHalkunde">
+  <img src="https://img.shields.io/badge/GitHub_Sponsors-EA4AAA?style=for-the-badge&logo=github&logoColor=white" alt="Sponsor on GitHub" height="55" />
+</a>
+
+<br/><br/>
+
+---
+
+Made with ❤️ by [Kartik Halkunde](https://github.com/KartikHalkunde)
+</div>
