@@ -24,12 +24,13 @@ Campus Circle is a cross-platform mobile application that helps you stay connect
 
 <h1>Screenshots</h1>
 
-<img src="assets/screenshots/1.jpg" width="45%" />
-<img src="assets/screenshots/2.jpg" width="45%" />
-<img src="assets/screenshots/3.jpg" width="45%" />
-<img src="assets/screenshots/4.jpg" width="45%" />
-<img src="assets/screenshots/5.jpg" width="45%" />
-<img src="assets/screenshots/6.jpg" width="45%" />
+<img src="assets/screenshots/home.jpeg" width="45%" />
+<img src="assets/screenshots/events.jpeg" width="45%" />
+<img src="assets/screenshots/event-details.jpeg" width="45%" />
+<img src="assets/screenshots/search.jpeg" width="45%" />
+<img src="assets/screenshots/club-profile.jpeg" width="45%" />
+<img src="assets/screenshots/profile.jpeg" width="45%" />
+<img src="assets/screenshots/chats.jpeg" width="45%" />
 
 ---
 
