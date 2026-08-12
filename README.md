@@ -25,19 +25,19 @@ Campus Circle is a cross-platform mobile application that helps you stay connect
 <h1>Screenshots</h1>
 
 <div align="center">
-  <img src="assets/screenshots/home.jpeg" width="23%" />
+  <img src="assets/screenshots/home.jpeg" width="23%" style="border-radius: 24px;" />
   &nbsp;
-  <img src="assets/screenshots/events.jpeg" width="23%" />
+  <img src="assets/screenshots/events.jpeg" width="23%" style="border-radius: 24px;" />
   &nbsp;
-  <img src="assets/screenshots/event-details.jpeg" width="23%" />
+  <img src="assets/screenshots/event-details.jpeg" width="23%" style="border-radius: 24px;" />
   &nbsp;
-  <img src="assets/screenshots/search.jpeg" width="23%" />
+  <img src="assets/screenshots/search.jpeg" width="23%" style="border-radius: 24px;" />
   <br/><br/>
-  <img src="assets/screenshots/club-profile.jpeg" width="23%" />
+  <img src="assets/screenshots/club-profile.jpeg" width="23%" style="border-radius: 24px;" />
   &nbsp;
-  <img src="assets/screenshots/profile.jpeg" width="23%" />
+  <img src="assets/screenshots/profile.jpeg" width="23%" style="border-radius: 24px;" />
   &nbsp;
-  <img src="assets/screenshots/chats.jpeg" width="23%" />
+  <img src="assets/screenshots/chats.jpeg" width="23%" style="border-radius: 24px;" />
 </div>
 
 ---
