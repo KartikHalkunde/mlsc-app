@@ -1,1 +1,15 @@
-node_modules/\n.expo/\ndist/\nnpm-debug.*\n*.jks\n*.p8\n*.p12\n*.key\n*.mobileprovision\n*.orig\n.*.swp\n.DS_Store
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig
+.*.swp
+.DS_Store
+.env
+.env.*
+!.env.example
